@@ -2,9 +2,7 @@ package com.example.jsonparser;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+
 
     public class NetworkService {
         private static NetworkService mInstance;
@@ -28,5 +26,6 @@ import retrofit2.Response;
         public JSONPlaceHolderApi getJSONApi() {
             return mRetrofit.create(JSONPlaceHolderApi.class);
         }
+
     }
 

@@ -1,44 +1,56 @@
 package com.example.jsonparser;
 
-import java.util.List;
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+public class Employee
+{
+    private String[] skills;
 
-public class Employee {
-
-    @SerializedName("name")
-    @Expose
     private String name;
-    @SerializedName("phone_number")
-    @Expose
-    private String phoneNumber;
-    @SerializedName("skills")
-    @Expose
-    private List<String> skills = null;
 
-    public String getName() {
-        return name;
-    }
+    private String phone_number;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public List<String> getSkills() {
+    public String[] getSkills ()
+    {
         return skills;
     }
 
-    public void setSkills(List<String> skills) {
+    public void setSkills (String[] skills)
+    {
         this.skills = skills;
     }
 
+    public String getName ()
+    {
+        return "Name:\n" + name;
+    }
+
+    public void setName (String name)
+    {
+        this.name = name;
+    }
+
+    public String getPhone_number ()
+    {
+        return "Phone:\n" + phone_number;
+    }
+
+    public void setPhone_number (String phone_number)
+    {
+        this.phone_number = phone_number;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "ClassPojo [skills = "+skills+", name = "+name+", phone_number = "+phone_number+"]";
+    }
+    public String toStringSkills()
+    {
+        String allSkills = null;
+        for (int i = 0 ; i < skills.length ; i++)
+        {
+            allSkills += skills[i]+"\n";
+        }
+        return "Skills:\n" + allSkills;
+    }
 }
 
